@@ -1,0 +1,44 @@
+[{
+    "userId": 1,
+    "name": "Albert1",
+    "password": "123123",
+    "phone": "+34772549421",
+    "email": "albert1@outlook.com"
+},
+{
+    "userId": 2,
+    "name": "Albert2",
+    "password": "123123",
+    "phone": "+34772549422",
+    "email": "albert2@outlook.com"
+},{
+    "userId": 3,
+    "name": "Albert3",
+    "password": "123123",
+    "phone": "+34772549423",
+    "email": "albert3@outlook.com"
+},{
+    "userId": 4,
+    "name": "Albert4",
+    "password": "123123",
+    "phone": "+34772549424",
+    "email": "albert4@outlook.com"
+},{
+    "userId": 5,
+    "name": "Albert5",
+    "password": "123123",
+    "phone": "+34772549425",
+    "email": "albert5@outlook.com"
+},{
+    "userId": 6,
+    "name": "Albert6",
+    "password": "123123",
+    "phone": "+34772549426",
+    "email": "albert6@outlook.com"
+},{
+    "userId": 7,
+    "name": "Albert7",
+    "password": "123123",
+    "phone": "+34772549427",
+    "email": "albert7@outlook.com"
+}]

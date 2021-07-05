@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Id: </label>
+  <input formControlName="userId" />
+  <label>Title: </label>
+  <input formControlName="title" />
+  <label>Completed: </label>
+  <select formControlName="completed">
+    <option value="true">Completed</option>
+    <option value="false">Not Completed</option>
+  </select>
+
+  <!-- <button type="submit" >Submit</button> -->
+  <button type="submit" [disabled]="!form.valid">
+    <a>Submit</a>
+  </button>
+</form>
+

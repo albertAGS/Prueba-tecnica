@@ -1,0 +1,17 @@
+<div class="modal" *ngIf="visible" >
+    <div class="container">
+      <div>
+        <div>
+          <div class="modalHeader">
+            <ng-content select="h2"></ng-content>
+            
+          </div>
+          <div class="modalContent">
+            <ng-content select=".contenido"></ng-content>
+          </div>
+        </div>
+        <button class="red" (click)="closeModal(true)">Delete</button>
+        <button class="blue" (click)="closeModal(false)">Cancel</button>
+      </div>
+    </div>
+  </div> 

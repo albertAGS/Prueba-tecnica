@@ -1,0 +1,40 @@
+<app-pop-up [visible]="opened" (close)="onEvent($event)">
+  <h2>Are you sure?</h2>
+  <p class="contenido">This operation cannot be undone</p>
+</app-pop-up>
+<div>
+  <div class="filter">
+    Numero id a filtrar
+    <select [(ngModel)]="idFilter">
+      <option
+        [value]="item"
+        *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+      >
+        {{ item }}
+      </option>
+    </select>
+    <button (click)="search()">search</button>
+    <a class="img" [routerLink]="['/list/new']"></a>
+  </div>
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{ head }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let el of elements">
+        <th scope="row">{{ el.title }}</th>
+        <td>{{ el.userId }}</td>
+        <td *ngIf="el.completed === true">completada!</td>
+        <td>por hacer!</td>
+        <td (click)="form(el)">
+          <img class="img" src="../../assets/png/edit.png" />
+        </td>
+        <td (click)="openPopUp(el)">
+          <img class="img" src="../../assets/png/trash.png" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
