@@ -2,26 +2,45 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-## Development server
+## Build angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` to install all necessary packages, then run` ng build` to build the project and navigate to `http://localhost:4200/`. The application will reload automatically if you change any of the source files.
 
-## Code scaffolding
+There is a file called users.json in the assets that are all the users and passwords to access the application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Build java
 
-## Build
+The BBDD used is mysql use the following. I've used jdk-11 to run the app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Apis
 
-## Running unit tests
+Create user: 
+    post `localhost:8080/api/users`
+    Body:   {
+                "name": "albert",
+                "username": "a.griera",
+                "password": "albert@gmail.com"
+            }
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Get users: get `localhost:8080/api/users`
 
-## Running end-to-end tests
+    Body optional {
+        "pageNumber": 1,
+        "pageLength": 2
+    }
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Get users by id: get `localhost:8080/api/users/1`
 
-## Further help
+Get todos: get `localhost:8080/api/todos`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Body optional {
+        "pageNumber": 1,
+        "pageLength": 2
+    }
+
+
+Delete user: delete `localhost:8080/api/users/1`
+
+Modify user: put`localhost:8080/api/users/1`
+
+

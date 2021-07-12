@@ -2,18 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { TodosServiceService } from '../services/todos.service';
-import { LoginService } from '../login/login.service';
 
 import { Todo } from '../interfaces/todo';
-
-
 
 @Component({
   selector: 'app-list-todos',
   templateUrl: './list-todos.component.html',
   styleUrls: ['./list-todos.component.scss'],
 })
-
 export class ListTodosComponent implements OnInit {
   public headElements = ['título', 'userid', 'completed', 'edit', 'borrar'];
   public elements: Todo[] = [];
@@ -29,9 +25,8 @@ export class ListTodosComponent implements OnInit {
 
   constructor(
     private todoService: TodosServiceService,
-    private _router: Router,
-    private login: LoginService
-    ) {}
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getTodoList();
@@ -42,11 +37,9 @@ export class ListTodosComponent implements OnInit {
   }
 
   public form(element: Todo) {
-    console.log(this.login.user.userId );
-    if (this.login.user.userId === element.userId) {
+    if (Number(localStorage.getItem('idUser')) === element.userId) {
       this._router.navigate([`list/${element.id}`]);
     }
-
   }
 
   public openPopUp(element: Todo) {
@@ -55,14 +48,22 @@ export class ListTodosComponent implements OnInit {
   }
 
   public onEvent(event: boolean) {
-    if(event) {
-      this.todoService.delete(this.elementSelected.id)
-      this.elements = this.elements.filter((x: Todo) => x.id !== this.elementSelected.id)
+    if (event) {
+      this.todoService.delete(this.elementSelected.id);
+      this.elements = this.elements.filter(
+        (x: Todo) => x.id !== this.elementSelected.id
+      );
     }
     this.opened = false;
   }
 
   public search() {
-    this.todoService.getTodos(this.idFilter).subscribe((x) => (this.elements = x));
+    if (this.idFilter === 'all') {
+      this.todoService.getTodos().subscribe((x) => (this.elements = x));
+    } else {
+      this.todoService
+        .getTodos(this.idFilter)
+        .subscribe((x) => (this.elements = x));
+    }
   }
 }

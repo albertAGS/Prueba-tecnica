@@ -8,7 +8,6 @@ import { User } from '../interfaces/user';
 })
 export class LoginService {
 
-  public user: any
 
   constructor() { }
 
@@ -18,7 +17,7 @@ export class LoginService {
 
 
   public logout() {
-    this.user = null
+    localStorage.setItem('idUser', ''); 
   }
 
   public readTextFile(file: string): Promise<string> {

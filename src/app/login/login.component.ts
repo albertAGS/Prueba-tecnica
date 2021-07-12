@@ -27,12 +27,10 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit() {
-    this.login.user = this.users.filter(user => user.name === this.form.value.name && user.password === this.form.value.password)[0] 
-    if (this.login.user) {
+    localStorage.setItem('idUser', this.users.filter(user => user.name === this.form.value.name && user.password === this.form.value.password)[0].userId.toString() ); 
+    
+    if (localStorage.getItem('idUser')) {
       this._router.navigate(['/list']);
     }
-
-  
-    // this._router.navigate(['/list']);
   }
 }

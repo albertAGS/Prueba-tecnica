@@ -12,12 +12,10 @@ export class TodosServiceService {
   private _url = 'https://jsonplaceholder.typicode.com/posts';
 
   public getTodos(id?: string): Observable<Todo[]> {
-    console.log(id);
     let params = new HttpParams();
     if (id) {
       params = params.set('userId', id);
     }
-    console.log(params);
     return this.http.get<Todo[]>(this._url, { params: params });
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { TodosServiceService } from '../../services/todos.service';
@@ -32,7 +33,7 @@ export class NewComponent implements OnInit {
       .pipe(
         switchMap((params) => {
           let id = params.get('id');
-          return id ? this.todoService.getTodoById(Number(id)) : '';
+            return id != 'new' ? this.todoService.getTodoById(Number(id)) : of('');
         })
       )
       .subscribe((element) => {

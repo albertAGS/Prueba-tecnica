@@ -1,8 +1,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <label>Id: </label>
-  <input formControlName="userId" />
+  <input formControlName="userId" min="1"/>
   <label>Title: </label>
-  <input formControlName="title" />
+  <input formControlName="title" maxlength="199" />
   <label>Completed: </label>
   <select formControlName="completed">
     <option value="true">Completed</option>
