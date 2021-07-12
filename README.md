@@ -4,9 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build angular
 
-Run `npm install` to install all necessary packages, then run` ng build` to build the project and navigate to `http://localhost:4200/`. The application will reload automatically if you change any of the source files.
+Run `npm install` to install all the packages.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-There is a file called users.json in the assets that are all the users and passwords to access the application.
+The name and password are required to access in the application, there's a .json inside assets called `users.json` with all the possibilities, use whatever you want, depends on the selected user you'll be able to edit only your own TODO's, although you can delete all of them.
 
 ## Build java
 
@@ -43,4 +44,9 @@ Delete user: delete `localhost:8080/api/users/1`
 
 Modify user: put`localhost:8080/api/users/1`
 
+
+Run `npm install` to install all the packages.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+The name and password are required to access in the application, there's a .json inside assets called `users.json` with all the possibilities, use whatever you want, depends on the selected user you'll be able to edit only your own TODO's, although you can delete all of them.
 
